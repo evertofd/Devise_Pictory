@@ -11,14 +11,14 @@
     </div>
   <% end %>
   <fieldset>
-    <div class="form-group">
+    <div class="form-group text-center">
       <%= form.label :title, "Título", class: "col-lg-2 control-label" %>
       <div class="col-lg-10">
         <%= form.text_field :title, id: :history_title, class: "form-control" %>
       </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group form-group-custom">
       <%= form.label :remote_picture_url, "URL Imagen", class: "col-lg-2 control-label" %>
       <div class="col-lg-10">
         <%= image_tag(history.picture.thumb, style: "margin-bottom: 10px; border-radius: 5px;") if history.picture? %>
@@ -38,7 +38,7 @@
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">
         <%= form.submit "Enviar", class: "btn btn-primary" %>
-        <%= link_to 'Back', histories_path, class: "btn btn-default"  %>
+        <%= link_to 'Volver', histories_path, class: "btn btn-warning"  %>
       </div>
     </div>
   </fieldset>

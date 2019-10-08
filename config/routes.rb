@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  resources :histories
+  devise_for :users, controllers: {
+        registrations: 'users/registrations'
+      }
 
+  get "/mis-historias/:username", to: 'histories#myhistories'
+
+  resources :histories
   root "histories#index"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
